@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Века</title>
+  </head>
+  <body>
+    <form action="/decades">
+      <select name="century">
+        <option value="null">Выберите век</option>
+        {% for century in centuries: %}
+        <option value="{{century}}">{{century}}</option>
+        {% endfor %}
+      </select>
+      <input type="submit" value="Выбрать" />
+    </form>
+  </body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Года</title>
+  </head>
+  <body>
+    <form action="/books">
+      <select name="book_date">
+        <option value="null">Выберите год</option>
+        {% for year in years: %}
+        <option value="{{year}}">{{year}}</option>
+        {% endfor %}
+      </select>
+      <input type="submit" value="Выбрать" />
+    </form>
+  </body>
+</html>

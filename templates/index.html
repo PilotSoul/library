@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Произведения</title>
+  </head>
+  <body>
+    <form action="/books">
+      <select name="date">
+        {% for date in dates: %} {% if date is none: %}
+        <option value="null">Дата неизвестна</option>
+        {% else: %}
+        <option value="{{date}}">{{date}}</option>
+        {% endif %} {% endfor %}
+      </select>
+      <input type="submit" value="Выбрать" />
+    </form>
+  </body>
+</html>

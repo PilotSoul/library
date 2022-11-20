@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Десятилетия</title>
+  </head>
+  <body>
+    <form action="/years">
+      <select name="decade">
+        <option value="null">Выберите десятилетие</option>
+        {% for decade in decades: %}
+        <option value="{{decade}}">{{decade}}</option>
+        {% endfor %}
+      </select>
+      <input type="submit" value="Выбрать" />
+    </form>
+  </body>
+</html>

@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{book_date}}</title>
+  </head>
+  <body>
+    <ul>
+      {% for URL in books: %}
+      <li><a href="{{URL}}" target="_blank">{{titles[URL]}}</a></li>
+      {% endfor %}
+    </ul>
+  </body>
+</html>
