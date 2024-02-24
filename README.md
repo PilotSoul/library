@@ -8,11 +8,28 @@
 - Django REST Framework
 - Swagger
 - PostgreSQL
+- Docker
+
+## Перед запуском
+Необходимо скопировать .env_example в .env и вставить свои параметры
+Чтобы получить secret key необходимо ввести в терминале следующую строку
+```console
+python -c 'from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())'
+```
 
 ## Запуск приложения через контейнер
+```console
 docker build -t library-app .
 
 docker run -p 8000:8000 library-app
+```
+
+## Запуск приложения без контейнера
+```console
+pip install -r requirements.txt
+python manage.py migrate
+python manage.py runserver
+```
 
 ## Схема базы данных сервиса
 ![library_db_scheme.png](docs/library_db_scheme.png)
