@@ -1,0 +1,44 @@
+version: '3.4'
+
+services:
+  django:
+    build: .
+    container_name: django
+    command: python manage.py runserver 0.0.0.0:8000
+    env_file:
+      - config/.env
+    volumes:
+      - .:/usr/src/app
+    networks:
+      - app_network
+    ports:
+      - 8000:8000
+    depends_on:
+      - pgdb
+    restart: always
+
+
+  pgdb:
+    image: postgres:14
+    env_file:
+      - config/.env
+#    environment:
+#      - POSTGRES_DB=library_db
+#      - POSTGRES_USER=postgres
+#      - POSTGRES_PASSWORD=postgres
+    container_name: pgdb
+    networks:
+      - app_network
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdbdata:/var/lib/postgresql/data/
+
+volumes:
+  pgdbdata:
+    driver: local
+
+networks:
+    app_network:
+        name: app_network
+        driver: bridge

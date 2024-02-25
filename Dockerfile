@@ -1,4 +1,4 @@
-FROM python:3.12
+FROM python:3.10-slim
 
 
 ENV PYTHONDONTWRITEBYTECODE 1
@@ -12,4 +12,4 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . /library/
 
-CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+EXPOSE 8000

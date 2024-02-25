@@ -18,10 +18,9 @@ python -c 'from django.core.management.utils import get_random_secret_key; print
 ```
 
 ## Запуск приложения через контейнер
+Запустится postgres и django приложение
 ```console
-docker build -t library-app .
-
-docker run -p 8000:8000 library-app
+docker compose up
 ```
 
 ## Запуск приложения без контейнера

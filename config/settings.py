@@ -22,7 +22,7 @@ SECRET_KEY = env.str("SECRET_KEY")
 
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', '0.0.0.0']
 
 
 # Application definition
@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'base',
     "drf_spectacular",
     "drf_yasg",
+    'django.contrib.postgres',
 ]
 
 MIDDLEWARE = [
