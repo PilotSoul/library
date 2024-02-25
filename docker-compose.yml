@@ -22,10 +22,6 @@ services:
     image: postgres:14
     env_file:
       - config/.env
-#    environment:
-#      - POSTGRES_DB=library_db
-#      - POSTGRES_USER=postgres
-#      - POSTGRES_PASSWORD=postgres
     container_name: pgdb
     networks:
       - app_network
