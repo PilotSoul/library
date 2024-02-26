@@ -33,6 +33,9 @@ python manage.py runserver
 ## Схема базы данных сервиса
 ![library_db_scheme.png](docs/library_db_scheme.png)
 
+### Swagger документация
+#### GET `/doc/`
+
 ### Создать нового посетителя
 #### POST `/api/visitor/new`
 Описание: Этот эндпоинт позволяет создать нового посетителя библиотеки.
